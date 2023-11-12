@@ -1,0 +1,11 @@
+[
+    { "_id": "A101", "title": "Q1 - Propulsion Assignment", "course": "RS101" },
+    { "_id": "A102", "title": "Q2 - Combustion Analysis", "course": "RS101" },
+    { "_id": "A103", "title": "Q3 - Nozzle Design Project", "course": "RS101" },
+    { "_id": "A201", "title": "Q1 - Aerodynamics Quiz", "course": "RS102" },
+    { "_id": "A202", "title": "Q2 - Flow Analysis", "course": "RS102" },
+    { "_id": "A203", "title": "Q3 - Heating Analysis", "course": "RS102" },
+    { "_id": "A301", "title": "Q1 - Structural Design Task", "course": "RS103" },
+    { "_id": "A302", "title": "Q2 - Orbital Calculations", "course": "RS103" },
+    { "_id": "A303", "title": "Q3 - Systems Engineering Exam", "course": "RS103" }
+  ]
