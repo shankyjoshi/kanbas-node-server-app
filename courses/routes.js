@@ -17,7 +17,7 @@ function CourseRoutes(app) {
   });
 
   app.post("/api/courses", (req, res) => {
-    const course = { ...req.body, _id: new Date().getTime().toString() };
+    const course = { ...req.body };
     dbCourses.push(course);
     res.send(course);
   });
