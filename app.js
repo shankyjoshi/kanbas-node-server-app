@@ -6,17 +6,41 @@ import CourseRoutes from "./courses/routes.js";
 import ModuleRoutes from "./modules/routes.js";
 import assignmentsRoutes from "./assignments/routes.js";
 import "dotenv/config";
+import mongoose from "mongoose";
+import UserRoutes from "./users/routes.js";
+import session from "express-session";
+mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 const app = express(); // create express app
-app.use(express.json());
+
 app.use(
   cors({
     credentials: true,
     origin: process.env.FRONTEND_URL,
   })
 );
+
+//THis needs to between cors and express json middleware
+const sessionOptions = {
+  secret: "any string",
+  resave: false,
+  saveUninitialized: false,
+};
+
+if (process.env.NODE_ENV !== "development") {
+  sessionOptions.proxy = true;
+  sessionOptions.cookie = {
+    sameSite: "none",
+    secure: true,
+  };
+}
+
+app.use(session(sessionOptions));
+
+app.use(express.json());
+
 // register get api
 Hello(app);
-
+UserRoutes(app);
 CourseRoutes(app);
 ModuleRoutes(app);
 assignmentsRoutes(app);
