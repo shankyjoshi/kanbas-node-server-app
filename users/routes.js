@@ -42,7 +42,6 @@ function UserRoutes(app) {
     res.json(currentUser);
   };
   const signout = (req, res) => {
-    currentUser = null;
     req.session.destroy();
     res.json(200);
   };
